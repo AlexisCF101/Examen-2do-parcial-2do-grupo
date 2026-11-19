@@ -1,0 +1,394 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Levi's Store - Proyecto Escolar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* Encabezado */
+    header {
+      background-color: #c41230;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      border: 2px solid white;
+      padding: 5px 15px;
+    }
+
+    /* Barra de navegación */
+    nav {
+      background-color: #222;
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #c41230;
+    }
+
+    /* Contenedor principal */
+    main {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+
+    section {
+      background: white;
+      padding: 20px;
+      margin-bottom: 25px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    h2 {
+      border-bottom: 2px solid #c41230;
+      padding-bottom: 5px;
+      color: #c41230;
+    }
+
+    /* Cuadrícula de productos */
+    .productos {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .tarjeta {
+      border: 1px solid #ccc;
+      padding: 15px;
+      width: 30%;
+      text-align: center;
+      background-color: #fafafa;
+    }
+
+    .tarjeta img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background-color: #ddd;
+    }
+
+    button {
+      background-color: #c41230;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #9e0e26;
+    }
+
+    /* Formularios y Carrito */
+    .zona-usuario {
+      display: flex;
+      gap: 20px;
+    }
+
+    .caja-form {
+      width: 50%;
+      border: 1px solid #ccc;
+      padding: 15px;
+    }
+
+    input {
+      width: 95%;
+      padding: 8px;
+      margin: 8px 0;
+      border: 1px solid #aaa;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    footer a {
+      color: #ff6b81;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header id="inicio">
+    <div class="logo">LEVI'S</div>
+    <div>
+      <a href="#cuenta" style="color:white; margin-right: 15px;">Mi Cuenta</a>
+      <a href="#carrito" style="color:white;">Carrito (<span id="contador">0</span>)</a>
+    </div>
+  </header>
+
+  <!-- BARRA DE NAVEGACIÓN -->
+  <nav>
+    <a href="#mujer">Mujer</a>
+    <a href="#hombre">Hombre</a>
+    <a href="#kids">Kids</a>
+    <a href="#colecciones">Colecciones</a>
+    <a href="#rebajas">Rebajas</a>
+  </nav>
+
+  <!-- CUERPO -->
+  <main>
+
+    <!-- SECCIÓN MUJER -->
+    <section id="mujer">
+      <h2>Mujer</h2>
+      <div class="productos">
+        <div class="tarjeta">
+          <img src="https://via.placeholder.com/200x180?text=Jeans+501+Mujer" alt="Jeans 501 Mujer">
+          <h3>Jeans 501 Original</h3>
+          <p>$1,299 MXN</p>
+          <button onclick="agregarCarrito('Jeans 501 Mujer', 1299)">Agregar al carrito</button>
+        </div>
+        <div class="tarjeta">
+          <img src="https://via.placeholder.com/200x180?text=Chamarra+Trucker" alt="Chamarra Trucker">
+          <h3>Chamarra Trucker</h3>
+          <p>$1,599 MXN</p>
+          <button onclick="agregarCarrito('Chamarra Trucker Mujer', 1599)">Agregar al carrito</button>
+        </div>
+        <div class="tarjeta">
+          <img src="https://via.placeholder.com/200x180?text=Playera+Logo" alt="Playera Logo">
+          <h3>Playera Clásica Logo</h3>
+          <p>$499 MXN</p>
+          <button onclick="agregarCarrito('Playera Logo Mujer', 499)">Agregar al carrito</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN HOMBRE -->
+    <section id="hombre">
+      <h2>Hombre</h2>
+      <div class="productos">
+        <div class="tarjeta">
+          <img src="https://via.placeholder.com/200x180?text=Jeans+511+Slim" alt="Jeans 511 Slim">
+          <h3>Jeans 511 Slim Fit</h3>
+          <p>$1,349 MXN</p>
+          <button onclick="agregarCarrito('Jeans 511 Hombre', 1349)">Agregar al carrito</button>
+        </div>
+        <div class="tarjeta">
+          <img src="https://via.placeholder.com/200x180?text=Camisa+Mezclilla" alt="Camisa Mezclilla">
+          <h3>Camisa Western</h3>
+          <p>$1,199 MXN</p>
+          <button onclick="agregarCarrito('Camisa Western Hombre', 1199)">Agregar al carrito</button>
+        </div>
+        <div class="tarjeta">
+          <img src="https://via.placeholder.com/200x180?text=Sudadera+Levis" alt="Sudadera Levis">
+          <h3>Sudadera con Capucha</h3>
+          <p>$999 MXN</p>
+          <button onclick="agregarCarrito('Sudadera Hombre', 999)">Agregar al carrito</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN KIDS -->
+    <section id="kids">
+      <h2>Kids</h2>
+      <div class="productos">
+        <div class="tarjeta">
+          <img src="https://via.placeholder.com/200x180?text=Overol+Kids" alt="Overol Kids">
+          <h3>Overol de Mezclilla</h3>
+          <p>$899 MXN</p>
+          <button onclick="agregarCarrito('Overol Kids', 899)">Agregar al carrito</button>
+        </div>
+        <div class="tarjeta">
+          <img src="https://via.placeholder.com/200x180?text=Jeans+Kids" alt="Jeans Kids">
+          <h3>Jeans 510 Infantil</h3>
+          <p>$749 MXN</p>
+          <button onclick="agregarCarrito('Jeans 510 Kids', 749)">Agregar al carrito</button>
+        </div>
+        <div class="tarjeta">
+          <img src="https://via.placeholder.com/200x180?text=Playera+Kids" alt="Playera Kids">
+          <h3>Playera Batwing Kids</h3>
+          <p>$349 MXN</p>
+          <button onclick="agregarCarrito('Playera Kids', 349)">Agregar al carrito</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN COLECCIONES -->
+    <section id="colecciones">
+      <h2>Colecciones</h2>
+      <div class="productos">
+        <div class="tarjeta">
+          <img src="https://via.placeholder.com/200x180?text=Vintage+Clothing" alt="Vintage Clothing">
+          <h3>Levi's Vintage 1955</h3>
+          <p>$2,499 MXN</p>
+          <button onclick="agregarCarrito('Levi\'s Vintage 1955', 2499)">Agregar al carrito</button>
+        </div>
+        <div class="tarjeta">
+          <img src="https://via.placeholder.com/200x180?text=Made+and+Crafted" alt="Made and Crafted">
+          <h3>Made & Crafted</h3>
+          <p>$2,199 MXN</p>
+          <button onclick="agregarCarrito('Made & Crafted', 2199)">Agregar al carrito</button>
+        </div>
+        <div class="tarjeta">
+          <img src="https://via.placeholder.com/200x180?text=SilverTab" alt="SilverTab">
+          <h3>Colección SilverTab</h3>
+          <p>$1,699 MXN</p>
+          <button onclick="agregarCarrito('Colección SilverTab', 1699)">Agregar al carrito</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN REBAJAS -->
+    <section id="rebajas">
+      <h2>Rebajas</h2>
+      <div class="productos">
+        <div class="tarjeta">
+          <img src="https://via.placeholder.com/200x180?text=Short+Mezclilla" alt="Short Mezclilla">
+          <h3>Short 501 (Antes $899)</h3>
+          <p>$549 MXN</p>
+          <button onclick="agregarCarrito('Short 501 Rebaja', 549)">Agregar al carrito</button>
+        </div>
+        <div class="tarjeta">
+          <img src="https://via.placeholder.com/200x180?text=Gorra+Levis" alt="Gorra Levis">
+          <h3>Gorra Clásica (Antes $499)</h3>
+          <p>$299 MXN</p>
+          <button onclick="agregarCarrito('Gorra Rebaja', 299)">Agregar al carrito</button>
+        </div>
+        <div class="tarjeta">
+          <img src="https://via.placeholder.com/200x180?text=Cinturon+Piel" alt="Cinturon Piel">
+          <h3>Cinturón Piel (Antes $699)</h3>
+          <p>$399 MXN</p>
+          <button onclick="agregarCarrito('Cinturón Rebaja', 399)">Agregar al carrito</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- INICIO DE SESIÓN Y REGISTRO -->
+    <section id="cuenta">
+      <h2>Inicio de Sesión y Registro</h2>
+      <div class="zona-usuario">
+        <!-- Inicio de sesión funcional -->
+        <div class="caja-form">
+          <h3>Iniciar Sesión</h3>
+          <form onsubmit="iniciarSesion(event)">
+            <label>Usuario o Correo:</label>
+            <input type="text" id="usuarioLogin" required placeholder="Ingresa tu usuario">
+            <label>Contraseña:</label>
+            <input type="password" id="passLogin" required placeholder="Ingresa tu contraseña">
+            <button type="submit">Entrar</button>
+          </form>
+          <p id="mensajeSesion" style="color: green; font-weight: bold;"></p>
+        </div>
+
+        <!-- Registro (solo visual) -->
+        <div class="caja-form">
+          <h3>Registrarse</h3>
+          <form onsubmit="event.preventDefault(); alert('Formulario de registro enviado (solo visual)');">
+            <label>Nombre completo:</label>
+            <input type="text" required placeholder="Tu nombre">
+            <label>Correo electrónico:</label>
+            <input type="email" required placeholder="correo@ejemplo.com">
+            <label>Contraseña:</label>
+            <input type="password" required placeholder="Crea una contraseña">
+            <button type="submit">Crear cuenta</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARRITO DE COMPRAS -->
+    <section id="carrito">
+      <h2>Carrito de Compras</h2>
+      <ul id="listaCarrito">
+        <li>El carrito está vacío.</li>
+      </ul>
+      <p><strong>Total a pagar: $<span id="totalCarrito">0</span> MXN</strong></p>
+      <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+    </section>
+
+  </main>
+
+  <!-- FOOTER CON INFORMACIÓN DEL ALUMNO Y ANCLAJE GITHUB -->
+  <footer>
+    <p><strong>Alumno:</strong> Jonatan Alexis Castro Fabela</p>
+    <p><strong>Grupo:</strong> 5:J | <strong>Especialidad:</strong> Programación</p>
+    <p>
+      <a href="#inicio">Volver arriba</a> | 
+      <a href="https://github.com/" target="_blank">Ver proyecto en GitHub</a>
+    </p>
+  </footer>
+
+  <!-- JAVASCRIPT SENCILLO -->
+  <script>
+    let carrito = [];
+    let total = 0;
+
+    // Función funcional para iniciar sesión
+    function iniciarSesion(evento) {
+      evento.preventDefault();
+      let usuario = document.getElementById("usuarioLogin").value;
+      document.getElementById("mensajeSesion").innerText = "¡Bienvenido, " + usuario + "! Sesión iniciada correctamente.";
+    }
+
+    // Funciones básicas del carrito
+    function agregarCarrito(nombre, precio) {
+      carrito.push({ nombre: nombre, precio: precio });
+      total += precio;
+      actualizarCarrito();
+    }
+
+    function actualizarCarrito() {
+      let lista = document.getElementById("listaCarrito");
+      lista.innerHTML = "";
+
+      if (carrito.length === 0) {
+        lista.innerHTML = "<li>El carrito está vacío.</li>";
+      } else {
+        for (let i = 0; i < carrito.length; i++) {
+          let item = document.createElement("li");
+          item.innerText = carrito[i].nombre + " - $" + carrito[i].precio + " MXN";
+          lista.appendChild(item);
+        }
+      }
+
+      document.getElementById("contador").innerText = carrito.length;
+      document.getElementById("totalCarrito").innerText = total;
+    }
+
+    function vaciarCarrito() {
+      carrito = [];
+      total = 0;
+      actualizarCarrito();
+    }
+  </script>
+
+</body>
+</html>
+
+```
